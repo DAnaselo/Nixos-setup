@@ -44,17 +44,17 @@
 
   # Packages For DWM DE
   environment.systemPackages = with pkgs; [
-    st
     dmenu
-    slock
-    slstatus
-    xclip
+    flameshot
     nitrogen
+    picom
     pulseaudio
     rofi
-    flameshot
+    slock
+    slstatus
+    st
+    xclip
   ];
-
 
   # File Picker And Better Flatpak Integration
   xdg.portal = {
