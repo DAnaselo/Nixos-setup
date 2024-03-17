@@ -40,7 +40,6 @@
     lf
     rofi-wayland
     slurp
-    waypaper
     wlogout
   ];
 }
