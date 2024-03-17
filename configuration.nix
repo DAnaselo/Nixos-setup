@@ -5,7 +5,7 @@
     [
       ./hardware-configuration.nix
       ./vm/vfio.nix
-      ./de/dwm.nix
+      ./de/hyprland.nix
     ];
 
   # Bootloader Configs (Using systemd-boot)
