@@ -57,9 +57,9 @@
       mkdir -p /var/lib/libvirt/hooks/qemu.d/win11/prepare/begin
       mkdir -p /var/lib/libvirt/hooks/qemu.d/win11/release/end
       
-      ln -sf /etc/nixos/vm/qemu /var/lib/libvirt/hooks/qemu
-      ln -sf /etc/nixos/vm/start.sh /var/lib/libvirt/hooks/qemu.d/win11/prepare/begin/start.sh
-      ln -sf /etc/nixos/vm/start.sh /var/lib/libvirt/hooks/qemu.d/win11/release/end/stop.sh
+      ln -sf /home/anas/Nixos-setup/vm/qemu /var/lib/libvirt/hooks/qemu
+      ln -sf /home/anas/Nixos-setup/vm/start.sh /var/lib/libvirt/hooks/qemu.d/win11/prepare/begin/start.sh
+      ln -sf /home/anas/Nixos-setup/vm/start.sh /var/lib/libvirt/hooks/qemu.d/win11/release/end/stop.sh
       
       chmod +x /var/lib/libvirt/hooks/qemu
       chmod +x /var/lib/libvirt/hooks/qemu.d/win11/prepare/begin/start.sh

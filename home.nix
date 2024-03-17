@@ -8,7 +8,7 @@
    enable = true;
    shellAliases = {
      ll = "ls -l";
-     update = "sudo nixos-rebuild switch --impure --upgrade --flake /etc/nixos";
+     update = "sudo nixos-rebuild switch --impure --upgrade --flake /home/anas/Nixos-setup";
      nvim = "lvim";
    };
    oh-my-zsh = {
@@ -72,11 +72,11 @@
     };
   };
 
- home.file.".config/hypr/hyprland.conf".source = /etc/nixos/dots/hypr/hyprland.conf;
- home.file.".config/hypr/hyprpaper.conf".source = /etc/nixos/dots/hypr/hyprpaper.conf;
- home.file.".config/waybar/config".source = /etc/nixos/dots/waybar/config;
- home.file.".config/waybar/style.css".source = /etc/nixos/dots/waybar/style.css;
- home.file.".config/rofi/config.rasi".source = /etc/nixos/dots/rofi/config.rasi;
+ home.file.".config/hypr/hyprland.conf".source = ./dots/hypr/hyprland.conf;
+ home.file.".config/hypr/hyprpaper.conf".source = ./dots/hypr/hyprpaper.conf;
+ home.file.".config/waybar/config".source = ./dots/waybar/config;
+ home.file.".config/waybar/style.css".source = ./dots/waybar/style.css;
+ home.file.".config/rofi/config.rasi".source = ./dots/rofi/config.rasi;
 
   # Homemanager Version
   home.stateVersion = "24.05";
