@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./vm/vfio.nix
+      ./de/dwm.nix
     ];
 
   # Bootloader Configs (Using systemd-boot)
@@ -76,36 +77,36 @@
   };
   
   # Enable the Display windowing system.
-  services = {
-    xserver = {
-      enable = true;
-      videoDrivers = [ "nvidia" ];
-      windowManager.awesome.enable = true;
+  #services = {
+    #xserver = {
+      #enable = true;
+      #videoDrivers = [ "nvidia" ];
+      #windowManager.awesome.enable = true;
       #desktopManager.plasma6.enable = true;
-      displayManager = {
-        autoLogin.enable = true;
-	      autoLogin.user = "anas";
-	      defaultSession = "hyprland";
-        sddm = {
-	        enable = true;
-	        wayland.enable = true;
-	      };
-      };
-      xkb.layout = "us,ara";
-      xkb.options = "grp:alt_shift_toggle";
-    };
-  };
+      #displayManager = {
+      #  autoLogin.enable = true;
+	    #  autoLogin.user = "anas";
+	    #  defaultSession = "hyprland";
+      #  sddm = {
+	    #    enable = true;
+	    #    wayland.enable = true;
+	    #  };
+      #};
+      #xkb.layout = "us,ara";
+      #xkb.options = "grp:alt_shift_toggle";
+    #};
+  #};
 
   # Persoanl DE Using Hyprland
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-    waybar = {
-      enable = true;
-    };
-  };
+  #programs = {
+  #  hyprland = {
+  #    enable = true;
+  #    xwayland.enable = true;
+  #  };
+  #  waybar = {
+  #    enable = true;
+  #  };
+  #};
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.anas = {
@@ -147,6 +148,7 @@
     obs-studio
     p7zip
     papirus-icon-theme
+    pavucontrol
     protontricks
     protonup-qt
     stress
@@ -158,18 +160,17 @@
     xwaylandvideobridge
 
     # To Complete Hyprland DE
-    cava
-    copyq
-    dunst
-    grim
-    hyprpicker
-    hyprpaper
-    lf
-    pavucontrol
-    rofi-wayland
-    slurp
-    waypaper
-    wlogout
+    #cava
+    #copyq
+    #dunst
+    #grim
+    #hyprpicker
+    #hyprpaper
+    #lf
+    #rofi-wayland
+    #slurp
+    #waypaper
+    #wlogout
   ];
 
   # Various Nix Store Configs

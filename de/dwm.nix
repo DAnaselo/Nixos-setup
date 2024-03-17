@@ -5,13 +5,16 @@
   services = {
     # Setting up Xresources
     xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
     # Enabling Dwm
       windowManager.dwm.enable = true;
       displayManager = {
-        lightdm.enable = true
+        lightdm.enable = true;
+        defaultSession = "none+dwm";
         autoLogin = {
           enable = true;
-          user = "titus";
+          user = "anas";
         };
         sessionCommands = ''
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${pkgs.writeText "Xresources" ''
@@ -36,8 +39,22 @@
       dmenu = prev.dmenu.overrideAttrs (old: {src = /home/anas/git/dwm-setup/dmenu-5.2;});
       slock = prev.slock.overrideAttrs (old: {src = /home/anas/git/dwm-setup/slock-1.5;});
       slstatus = prev.slstatus.overrideAttrs (old: {src = /home/anas/git/dwm-setup/slstatus-1.0;});
-    };
+    })
   ];
+
+  # Packages For DWM DE
+  environment.systemPackages = with pkgs; [
+    st
+    dmenu
+    slock
+    slstatus
+    xclip
+    nitrogen
+    pulseaudio
+    rofi
+    flameshot
+  ];
+
 
   # File Picker And Better Flatpak Integration
   xdg.portal = {
