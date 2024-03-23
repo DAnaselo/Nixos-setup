@@ -34,28 +34,30 @@
             "5": []
         }
     },
-    "tray": {
+    "tray":{
         "icon-size": 13,
         "spacing": 10
     },
-    "clock": {
-        "format": "{: %I:%M %p   %d/%m}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "clock":{
+        "format": "{:%I:%M%p - %m/%d}",
+        "tooltip": false,
         "on-click": "pkill -9 rofi"
     },
     "custom/power":{
         "icon-size": 15,
         "spacing": 10,
         "format": "",
+        "tooltip": false,
         "on-click": "wlogout"
     },
     "custom/menu":{
         "icon-size": 13,
         "spacing": 10,
+        "tooltip": false,
         "format": "",
         "on-click": "rofi -show drun"
     },
-    "pulseaudio": {
+    "pulseaudio":{
         "format": "{icon} {volume}%",
         "tooltip": false,
         "format-muted": " Muted",

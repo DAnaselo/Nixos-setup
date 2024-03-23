@@ -47,14 +47,26 @@
     };
   };
 
-  # Enabling Wake On Lan
+  # Wake on Lan Service
   systemd.services.wakeonlan = {
-    description = "Wake On Lan Support";
+    description = "WakeonLan Service";
     after = [ "network.target" ];
     serviceConfig = {
       Type = "simple";
       RemainAfterExit = "true";
       ExecStart = "${pkgs.ethtool}/sbin/ethtool -s enp3s0 wol g";
+    };
+    wantedBy = [ "default.target" ];
+  };
+
+  # Preload Service
+  systemd.services.preload = {
+    description = "Preload Service";
+    after = [ "network.target" ];
+    serviceConfig = {
+      Type = "simple";
+      RemainAfterExit = "true";
+      ExecStart = "${pkgs.preload}/sbin/preload";
     };
     wantedBy = [ "default.target" ];
   };
@@ -76,6 +88,16 @@
     driSupport32Bit = true;
   };
 
+  # Plasma 6 Doodad
+  #services = {
+  #  desktopManager.plasma6.enable = true;
+  #  xserver = {
+  #    enable = true;
+  #    videoDrivers = [ "nvidia" ];
+  #    displayManager.sddm.enable = true;
+  #  };
+  #};
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.anas = {
     isNormalUser = true;
@@ -89,23 +111,18 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    ark
     appimage-run
     btop
     cpufetch
     discord
     gcc # dev
-    gimp
     git
     gnome.zenity
     goverlay
-    heroic
     htop
     lf
-    libsForQt5.kdeconnect-kde
-    libsForQt5.kdenlive
-    libreoffice
-    lutris
+    kdePackages.kdeconnect-kde
+    kdePackages.kdenlive
     lunarvim
     mangohud
     mpv
@@ -113,12 +130,10 @@
     #mesa # Gpu Driver
     ###
     neofetch
-    obs-studio
     p7zip
     papirus-icon-theme
     pavucontrol
     protontricks
-    protonup-qt
     stress
     s-tui
     tmux
@@ -165,7 +180,7 @@
     openssh.enable = true; #Service For SSH
     flatpak.enable = true; #Service For Flatpak
     udisks2.enable = true; #Service For Mounting Drives
-    blueman.enable = true; #Service For Gui Bluetooth Manager
+    #blueman.enable = true; #Service For Gui Bluetooth Manager
     pipewire = {
       enable = true;  # Enabling The Service
       alsa.enable = true; # Let it Replace Alsa
