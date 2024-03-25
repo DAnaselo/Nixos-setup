@@ -56,7 +56,7 @@
     xclip
   ];
 
-  # File Picker And Better Flatpak Integration
+  # Better Flatpak Integration
   xdg.portal = {
     enable = true;
     config.common.default = "*";
