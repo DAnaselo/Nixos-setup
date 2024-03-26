@@ -51,26 +51,26 @@
  };
 
  # Cursors
- home.pointerCursor = {
-   gtk.enable = true;
+ #home.pointerCursor = {
+ #  gtk.enable = true;
  #  x11.enable = true;
-   package = pkgs.bibata-cursors;
-   name = "Bibata-Modern-Classic";
-   size = 16;
- };
+ #  package = pkgs.bibata-cursors;
+ #  name = "Bibata-Modern-Classic";
+ #  size = 16;
+ #};
 
  # Gtk Theme
- gtk = {
-   enable = true;
-   theme = {
-     name = "Arc-Dark";
-     package = pkgs.arc-theme;
-   };
-   iconTheme = {
-     name = "Papirus-Icons";
-     package = pkgs.papirus-icon-theme;
-   };
- };
+ #gtk = {
+ #  enable = true;
+ #  theme = {
+ #    name = "Arc-Dark";
+ #    package = pkgs.arc-theme;
+ #  };
+ #  iconTheme = {
+ #    name = "Papirus-Icons";
+ #    package = pkgs.papirus-icon-theme;
+ #  };
+ #};
 
  home.file.".config/hypr/hyprland.conf".source = ./dots/hypr/hyprland.conf;
  home.file.".config/hypr/hyprpaper.conf".source = ./dots/hypr/hyprpaper.conf;

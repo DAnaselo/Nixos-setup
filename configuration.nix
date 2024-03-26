@@ -5,7 +5,7 @@
     [
       ./hardware-configuration.nix
       ./vm/vfio.nix
-      ./de/hyprland.nix
+      ./de/plasma6.nix
     ];
 
   # Bootloader Configs (Using systemd-boot)
@@ -89,16 +89,6 @@
     driSupport32Bit = true;
   };
 
-  # Plasma 6 Doodad
-  #services = {
-  #  desktopManager.plasma6.enable = true;
-  #  xserver = {
-  #    enable = true;
-  #    videoDrivers = [ "nvidia" ];
-  #    displayManager.sddm.enable = true;
-  #  };
-  #};
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.anas = {
     isNormalUser = true;
@@ -181,7 +171,7 @@
     openssh.enable = true; #Service For SSH
     flatpak.enable = true; #Service For Flatpak
     udisks2.enable = true; #Service For Mounting Drives
-    blueman.enable = true; #Service For Gui Bluetooth Manager
+    #blueman.enable = true; #Service For Gui Bluetooth Manager
     pipewire = {
       enable = true;  # Enabling The Service
       alsa.enable = true; # Let it Replace Alsa
