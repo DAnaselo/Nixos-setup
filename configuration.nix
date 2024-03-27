@@ -5,7 +5,7 @@
     [
       ./hardware-configuration.nix
       ./vm/vfio.nix
-      ./de/plasma6.nix
+      ./de/hyprland.nix
     ];
 
   # Bootloader Configs (Using systemd-boot)
@@ -171,7 +171,7 @@
     openssh.enable = true; #Service For SSH
     flatpak.enable = true; #Service For Flatpak
     udisks2.enable = true; #Service For Mounting Drives
-    #blueman.enable = true; #Service For Gui Bluetooth Manager
+    blueman.enable = true; #Service For Gui Bluetooth Manager
     pipewire = {
       enable = true;  # Enabling The Service
       alsa.enable = true; # Let it Replace Alsa
