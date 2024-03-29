@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
   home.username = "anas";
 
   programs.zsh = {
