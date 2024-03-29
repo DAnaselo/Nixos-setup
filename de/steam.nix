@@ -1,13 +1,13 @@
 { config, pkgs, ...}:
 {
   services.xserver = {
-    enable = true
-    display.Manager = {
+    enable = true;
+    displayManager = {
       lightdm.enable = true;
-      defaultSession = "steam"
+      defaultSession = "steam";
       autoLogin = {
         enable = true;
-        user = "anas"
+        user = "anas";
       };
     };
   };
