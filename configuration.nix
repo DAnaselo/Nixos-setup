@@ -3,7 +3,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./vm/vfio.nix
       ./de/hyprland.nix
     ];
 
@@ -105,7 +104,6 @@
     btop
     cpufetch
     discord
-    gcc # dev
     git
     gnome.zenity
     goverlay
