@@ -1,9 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "anas";
-
-  programs.zsh = {
+ home.username = "anas";
+ programs.zsh = {
    enable = true;
    shellAliases = {
      ll = "ls -l";
@@ -12,10 +11,10 @@
    };
    oh-my-zsh = {
      enable = true;
-       #plugins = [""];
-       theme = "robbyrussell";
-     };
+     #plugins = [""];
+     theme = "robbyrussell";
    };
+ };
 
  programs.kitty = {
    enable = true;

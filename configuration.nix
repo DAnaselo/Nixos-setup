@@ -4,6 +4,7 @@
     [
       ./hardware-configuration.nix
       ./de/hyprland.nix
+      ./vm/vfio.nix
     ];
 
   # Bootloader Configs (Using systemd-boot)
@@ -15,7 +16,7 @@
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ "quiet" "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
+    kernelParams = [ "quiet" ];
     #kernelParams = [ "quiet" "nouveau.config=NvGspRm=1" ];
   };
 
@@ -146,14 +147,6 @@
     };
   };
  
-  # Steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    gamescopeSession.enable = true;
-  };
-  
   # Security Agent
   programs.gnupg.agent = {
     enable = true;
