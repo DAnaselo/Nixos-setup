@@ -9,7 +9,7 @@
       displayManager = {
         autoLogin.enable = true;
         autoLogin.user = "anas";
-        defaultSession = "steam";
+        defaultSession = "hyprland";
         sddm = {
           enable = true;
           wayland.enable = true;
@@ -31,7 +31,10 @@
 
   xdg.portal = { 
     enable = true; 
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 
   # Packges For Hyprland DE

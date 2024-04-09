@@ -106,8 +106,10 @@
     cpufetch
     discord
     git
+    gnome.nautilus
     gnome.zenity
     goverlay
+    hardinfo
     htop
     lf
     kdePackages.kdeconnect-kde
@@ -126,6 +128,7 @@
     stress
     s-tui
     tmux
+    trash-cli
     unrar
     unzip
     wget
