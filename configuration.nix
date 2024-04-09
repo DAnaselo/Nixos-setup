@@ -146,6 +146,14 @@
       auto-optimise-store = true; # Optimise (Hardlink) Nix Store On Every Rebuild
     };
   };
+
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    gamescopeSession.enable = true;
+  };
  
   # Security Agent
   programs.gnupg.agent = {

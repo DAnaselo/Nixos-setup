@@ -51,9 +51,9 @@
  # Cursors
  home.pointerCursor = {
    gtk.enable = true;
- #  x11.enable = true;
+   #x11.enable = true;
    package = pkgs.bibata-cursors;
-   name = "Bibata-Modern-Classic";
+   name = "Bibata-Original-Classic";
    size = 16;
  };
 
@@ -63,10 +63,6 @@
    theme = {
      name = "Arc-Dark";
      package = pkgs.arc-theme;
-   };
-   iconTheme = {
-     name = "Papirus-Icons";
-     package = pkgs.papirus-icon-theme;
    };
  };
 
