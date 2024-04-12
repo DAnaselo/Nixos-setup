@@ -3,7 +3,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./de/hyprland.nix
+      ./de/plasma6.nix
       ./vm/vfio.nix
     ];
 
@@ -105,6 +105,7 @@
     btop
     cpufetch
     discord
+    fastfetch
     git
     gnome.nautilus
     gnome.zenity
@@ -115,6 +116,7 @@
     kdePackages.kdeconnect-kde
     kdePackages.kdenlive
     lunarvim
+    lutris
     mangohud
     mpv
     ###
@@ -172,7 +174,7 @@
     openssh.enable = true; #Service For SSH
     flatpak.enable = true; #Service For Flatpak
     udisks2.enable = true; #Service For Mounting Drives
-    blueman.enable = true; #Service For Gui Bluetooth Manager
+    #blueman.enable = true; #Service For Gui Bluetooth Manager
     pipewire = {
       enable = true;  # Enabling The Service
       alsa.enable = true; # Let it Replace Alsa

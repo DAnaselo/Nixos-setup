@@ -49,38 +49,38 @@
  };
 
  # Cursors
- home.pointerCursor = {
-   gtk.enable = true;
+ #home.pointerCursor = {
+ #  gtk.enable = true;
    #x11.enable = true;
-   package = pkgs.bibata-cursors;
-   name = "Bibata-Original-Classic";
-   size = 16;
- };
+ #  package = pkgs.bibata-cursors;
+ #  name = "Bibata-Original-Classic";
+ #  size = 16;
+ #};
 
  # Gtk Theme
- gtk = {
-   enable = true;
-   theme = {
+ #gtk = {
+ #  enable = true;
+ #  theme = {
      #name = "Arc-Dark";
      #package = pkgs.arc-theme;
-     name = "Adwaita-dark";
-     package = pkgs.gnome.gnome-themes-extra;
-   };
-   iconTheme = {
-     name = "Adwaita";
-     package = pkgs.gnome.adwaita-icon-theme;
-   };
-   gtk3.extraConfig = {
-     Settings = ''
-       gtk-application-prefer-dark-theme=1
-    '';
-   };
-   gtk4.extraConfig = {
-     Settings = ''
-       gtk-application-prefer-dark-theme=1
-     '';
-   };
- };
+ #    name = "Adwaita-dark";
+ #    package = pkgs.gnome.gnome-themes-extra;
+ #  };
+ #  iconTheme = {
+ #    name = "Adwaita";
+ #    package = pkgs.gnome.adwaita-icon-theme;
+ #  };
+ #  gtk3.extraConfig = {
+ #    Settings = ''
+ #      gtk-application-prefer-dark-theme=1
+ #   '';
+ #  };
+ #  gtk4.extraConfig = {
+ #    Settings = ''
+ #      gtk-application-prefer-dark-theme=1
+ #    '';
+ #  };
+ #};
 
  home.file.".config/hypr/hyprland.conf".source = ./dots/hypr/hyprland.conf;
  home.file.".config/hypr/hyprpaper.conf".source = ./dots/hypr/hyprpaper.conf;
