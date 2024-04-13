@@ -103,7 +103,7 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     btop
-    cpufetch
+    brave
     discord
     fastfetch
     git
@@ -112,7 +112,6 @@
     goverlay
     hardinfo
     htop
-    lf
     kdePackages.kdeconnect-kde
     kdePackages.kdenlive
     lunarvim
@@ -122,15 +121,12 @@
     ###
     #mesa # Gpu Driver
     ###
-    neofetch
     p7zip
-    papirus-icon-theme
     pavucontrol
     protontricks
     stress
     s-tui
     tmux
-    trash-cli
     unrar
     unzip
     wget
