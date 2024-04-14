@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/9dd22d75-0957-4ee2-bd97-abbb551241eb";
@@ -27,6 +28,7 @@
     { device = "/dev/disk/by-uuid/193d0a40-fb9d-483a-8e2b-830841fba2ac";
       fsType = "ext4";
     };
+
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/e3813c47-722a-493b-ae74-0ed635788add"; }

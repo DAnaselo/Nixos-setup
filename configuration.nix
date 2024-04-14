@@ -110,6 +110,7 @@
     gnome.nautilus
     gnome.zenity
     goverlay
+    gparted
     hardinfo
     htop
     kdePackages.kdeconnect-kde

@@ -8,6 +8,7 @@
      ll = "ls -l";
      update = "sudo nixos-rebuild switch --impure --upgrade --flake /home/anas/Nixos-setup";
      nvim = "lvim";
+     neofetch = "fastfetch";
    };
    oh-my-zsh = {
      enable = true;
