@@ -7,3 +7,8 @@ Finally Run this to build
 ```
 sudo nixos-rebuild switch --upgrade --impure --flake .
 ```
+
+run this to install my flatpaks
+```
+flatpak install com.usebottles.bottles
+```
