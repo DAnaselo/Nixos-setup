@@ -103,8 +103,6 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     btop
-    brave
-    discord
     fastfetch
     git
     gnome.nautilus
@@ -114,7 +112,6 @@
     hardinfo
     htop
     kdePackages.kdeconnect-kde
-    kdePackages.kdenlive
     lunarvim
     lutris
     mangohud
@@ -131,7 +128,6 @@
     unrar
     unzip
     wget
-    xwaylandvideobridge
   ];
 
   # Various Nix Store Configs
