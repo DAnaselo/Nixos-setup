@@ -103,7 +103,9 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     btop
+    discord
     fastfetch
+    gimp
     git
     gnome.nautilus
     gnome.zenity
@@ -112,6 +114,7 @@
     hardinfo
     htop
     kdePackages.kdeconnect-kde
+    kdePackages.kdenlive
     lunarvim
     lutris
     mangohud
@@ -119,9 +122,12 @@
     ###
     #mesa # Gpu Driver
     ###
+    obs-studio
     p7zip
     pavucontrol
+    prismlauncher
     protontricks
+    protonup-qt
     stress
     s-tui
     tmux
