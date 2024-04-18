@@ -10,5 +10,5 @@ sudo nixos-rebuild switch --upgrade --impure --flake .
 
 run this to install my flatpaks
 ```
-flatpak install com.discordapp.Discord net.davidotek.pupgui2 com.obsproject.Studio org.kde.kdenlive org.gimp.GIMP com.github.Matoking.protontricks dev.lizardbyte.app.Sunshine org.localsend.localsend_app com.github.KRTirtho.Spotube com.atlauncher.ATLauncher io.missioncenter.MissionCenter
+flatpak install com.discordapp.Discord net.davidotek.pupgui2 com.obsproject.Studio org.kde.kdenlive org.gimp.GIMP org.localsend.localsend_app com.github.KRTirtho.Spotube com.atlauncher.ATLauncher
 ```
