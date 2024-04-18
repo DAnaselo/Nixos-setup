@@ -102,6 +102,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     appimage-run
+    brave
     btop
     discord
     fastfetch
