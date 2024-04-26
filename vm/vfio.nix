@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
-
 {
-
   # Enable dconf (System Management Tool)
   programs.dconf.enable = true;
   programs.virt-manager.enable = true;
@@ -59,8 +57,8 @@
       
       ln -sf /home/anas/Nixos-setup/vm/qemu /var/lib/libvirt/hooks/qemu
       ln -sf /home/anas/Nixos-setup/vm/start.sh /var/lib/libvirt/hooks/qemu.d/win11/prepare/begin/start.sh
-      ln -sf /home/anas/Nixos-setup/vm/stop.sh /var/lib/libvirt/hooks/qemu.d/win11/release/end/stop.sh
-      
+      ln -sf /home/anas/Nixos-setup/vm/stop.sh  /var/lib/libvirt/hooks/qemu.d/win11/release/end/stop.sh
+
       chmod +x /var/lib/libvirt/hooks/qemu
       chmod +x /var/lib/libvirt/hooks/qemu.d/win11/prepare/begin/start.sh
       chmod +x /var/lib/libvirt/hooks/qemu.d/win11/release/end/stop.sh

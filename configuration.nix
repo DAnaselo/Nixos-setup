@@ -7,6 +7,8 @@
       ./vm/vfio.nix
     ];
 
+    boot.supportedFilesystems = [ "ntfs" ];
+
   # Bootloader Configs (Using systemd-boot)
   boot = {
     tmp.cleanOnBoot = true;
@@ -117,13 +119,14 @@
     kdePackages.kdeconnect-kde
     kdePackages.kdenlive
     lunarvim
-    lutris
     mangohud
+    mission-center
     mpv
     ###
     #mesa # Gpu Driver
     ###
     obs-studio
+    opendrop
     p7zip
     pavucontrol
     prismlauncher
@@ -131,6 +134,7 @@
     protonup-qt
     stress
     s-tui
+    sunshine
     tmux
     unrar
     unzip
