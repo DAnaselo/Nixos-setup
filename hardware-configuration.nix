@@ -14,23 +14,18 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3a00bd65-69b7-4a0f-a91b-50307d93d258";
+    { device = "/dev/disk/by-uuid/b30dbff3-a341-43cc-9bcb-2d17505b35d5";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2CC1-905F";
+    { device = "/dev/disk/by-uuid/F722-FBD9";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
-    
-    fileSystems."/run/media/anas/WDElements750GB" =
-    { device = "/dev/disk/by-uuid/3992ccbc-71e8-4e10-8201-a66a5fd15c6f";
-      fsType = "ext4";
-    };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/7e1b718a-aff8-4743-a794-5465856ad057"; }
+    [ { device = "/dev/disk/by-uuid/997d4437-a14b-4607-9b34-c36349a5c890"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

@@ -4,10 +4,7 @@
     [
       ./hardware-configuration.nix
       ./de/plasma6.nix
-      ./vm/vfio.nix
     ];
-
-    boot.supportedFilesystems = [ "ntfs" ];
 
   # Bootloader Configs (Using systemd-boot)
   boot = {
@@ -104,37 +101,25 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     appimage-run
-    brave
     btop
-    discord
     fastfetch
-    gimp
     git
     gnome.nautilus
     gnome.zenity
     goverlay
     gparted
-    hardinfo
     htop
     kdePackages.kdeconnect-kde
-    kdePackages.kdenlive
     lunarvim
     mangohud
-    mission-center
     mpv
     ###
     #mesa # Gpu Driver
     ###
-    obs-studio
-    opendrop
     p7zip
     pavucontrol
-    prismlauncher
-    protontricks
-    protonup-qt
     stress
     s-tui
-    sunshine
     tmux
     unrar
     unzip
@@ -154,14 +139,6 @@
       experimental-features = [ "nix-command" "flakes" ]; # Enabling The "Flake" Commmand
       auto-optimise-store = true; # Optimise (Hardlink) Nix Store On Every Rebuild
     };
-  };
-
-  # Steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    gamescopeSession.enable = true;
   };
  
   # Security Agent
@@ -205,12 +182,12 @@
   networking.firewall = { 
     enable = true;
     allowedTCPPortRanges = [ 
-      { from = 1714; to = 1764; } # KDE Connect
-      { from = 47984; to = 48010; } # Sunshine
+      { from = 1714; to = 1764; } #KDE Connect
+      { from = 47984; to = 48010; } #Sunshine
     ];  
     allowedUDPPortRanges = [ 
-      { from = 1714; to = 1764; } # KDE Connect
-      { from = 47998; to = 48010; }# Sunshine
+      { from = 1714; to = 1764; }  #KDE Connect
+      { from = 47998; to = 48010; } #Sunshine
     ];  
   };
 
