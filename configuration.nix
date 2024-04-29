@@ -103,6 +103,7 @@
     appimage-run
     btop
     fastfetch
+    gamescope
     git
     gnome.nautilus
     gnome.zenity
@@ -118,6 +119,7 @@
     ###
     p7zip
     pavucontrol
+    piper
     stress
     s-tui
     tmux
@@ -146,7 +148,7 @@
     enable = true;
     enableSSHSupport = true;
   };
-  
+
   # rtkit is optional but recommended For Audio
   security.rtkit.enable = true;
 
@@ -155,6 +157,7 @@
     openssh.enable = true; #Service For SSH
     flatpak.enable = true; #Service For Flatpak
     udisks2.enable = true; #Service For Mounting Drives
+    ratbagd.enable = true; #Service For Configuring Logitech Devices
     #blueman.enable = true; #Service For Gui Bluetooth Manager
     pipewire = {
       enable = true;  # Enabling The Service

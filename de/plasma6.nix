@@ -1,7 +1,7 @@
 { config, pkgs, ...}:
 {
 
- # Display Server config
+#Display Server config
  services = {
     desktopManager.plasma6.enable = true;
     displayManager.sddm = {
@@ -10,12 +10,11 @@
     };
     xserver = {
       enable = true;
-      videoDrivers = [ "nvidia" ];
+     videoDrivers = [ "nvidia" ];
     };
   };
-
+ 
   environment.systemPackages = with pkgs; [
     kdePackages.plasma-browser-integration
   ];
-
 }
