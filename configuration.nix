@@ -4,7 +4,10 @@
     [
       ./hardware-configuration.nix
       ./de/plasma6.nix
+      ./vm/vfio.nix
     ];
+
+    boot.supportedFilesystems = [ "ntfs" ];
 
   # Bootloader Configs (Using systemd-boot)
   boot = {
@@ -101,8 +104,11 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     appimage-run
+    brave
     btop
+    discord
     fastfetch
+    filezilla
     gamescope
     git
     gnome.nautilus
@@ -112,14 +118,18 @@
     htop
     kdePackages.kdeconnect-kde
     lunarvim
+    lutris
     mangohud
     mpv
+    piper
     ###
     #mesa # Gpu Driver
     ###
+    qbittorrent
     p7zip
     pavucontrol
-    piper
+    protontricks
+    protonup-qt
     stress
     s-tui
     tmux
@@ -142,6 +152,17 @@
       auto-optimise-store = true; # Optimise (Hardlink) Nix Store On Every Rebuild
     };
   };
+
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    gamescopeSession.enable = true;
+  };
+
+  # Gamemode
+  programs.gamemode.enable = true;
  
   # Security Agent
   programs.gnupg.agent = {
@@ -174,11 +195,6 @@
     enable = true;
     powerOnBoot = true;
     settings.General.Enable = "Source,Sink,Media,Socket";
-  };
-
-  # Solaar
-  programs.solaar = {
-    enable = true;
   };
 
   # Firewalling

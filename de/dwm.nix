@@ -34,9 +34,9 @@
   # Define The Custom Configs For Every Suckless Package
   nixpkgs.overlays = [
     (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: {src = /home/anas/git/dwm-setup/dwm-6.4;});
+      dwm = prev.dwm.overrideAttrs (old: {src = /home/anas/git/dwm-setup/dwm-6.5;});
       st = prev.st.overrideAttrs (old: {src = /home/anas/git/dwm-setup/st-0.9;});
-      dmenu = prev.dmenu.overrideAttrs (old: {src = /home/anas/git/dwm-setup/dmenu-5.2;});
+      dmenu = prev.dmenu.overrideAttrs (old: {src = /home/anas/git/dwm-setup/dmenu-5.3;});
       slock = prev.slock.overrideAttrs (old: {src = /home/anas/git/dwm-setup/slock-1.5;});
       slstatus = prev.slstatus.overrideAttrs (old: {src = /home/anas/git/dwm-setup/slstatus-1.0;});
     })
@@ -49,7 +49,6 @@
     nitrogen
     picom
     pulseaudio
-    rofi
     slock
     slstatus
     st
