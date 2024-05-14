@@ -1,11 +1,8 @@
-1.Make sure to make The Default System Config.
+1.Make sure to Generate The Default System Config Using
 ```
 sudo nixos-generate-config --root /mnt
 ```
-2.Go To /etc/nixos Then Uncomment
-```
-networking.networkmanager.enable = true;
-```
+2. Make Sure To Uncomment "networking.networkmanager.enable = true;" In "/etc/nixos/configuration.nix
 Then Change the user name from "alice" to "anas" so my config works properly, Then Excute
 ```
 sudo nixos-install
