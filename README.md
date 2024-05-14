@@ -2,7 +2,7 @@
 ```
 sudo nixos-generate-config --root /mnt
 ```
-2. Make Sure To Uncomment "networking.networkmanager.enable = true;" In "/etc/nixos/configuration.nix
+2. Make Sure To Uncomment " networking.networkmanager.enable = true; " In " /etc/nixos/configuration.nix "
 Then Change the user name from "alice" to "anas" so my config works properly, Then Excute
 ```
 sudo nixos-install
