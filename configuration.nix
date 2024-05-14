@@ -3,11 +3,8 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./de/plasma6.nix
-      ./vm/vfio.nix
+      ./de/hyprland.nix
     ];
-
-    boot.supportedFilesystems = [ "ntfs" ];
 
   # Bootloader Configs (Using systemd-boot)
   boot = {
@@ -18,11 +15,11 @@
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ "quiet" ];
+    #kernelParams = [ "quiet" ];
     #kernelParams = [ "quiet" "nouveau.config=NvGspRm=1" ];
   };
 
-  # Systemd Boot Timeout
+  # Systemd Boot Shutdown Timeout
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=15s
   '';
@@ -61,33 +58,26 @@
     wantedBy = [ "default.target" ];
   };
 
-  # Preload Service
-  systemd.services.preload = {
-    description = "Preload Service";
-    after = [ "network.target" ];
-    serviceConfig = {
-      Type = "simple";
-      RemainAfterExit = "true";
-      ExecStart = "${pkgs.preload}/sbin/preload";
-    };
-    wantedBy = [ "default.target" ];
-  };
-
-  # Nvidia
+  # Prop Nvidia Drivers
   hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
+    modesetting.enable = true; # nvidia-drm.modeset=1
+    powerManagement.enable = true; # NVreg_PreserveVideoMemoryAllocations=1
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
-  # Enable Opengl
+  # Hardware Acceleration
   hardware.opengl = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    driSupport = true; # Vulkan 
+    driSupport32Bit = true; # 32Bit Vulkan
+    extraPackages = with pkgs; [
+      vaapiVdpau
+      libvdpau-va-gl
+      nvidia-vaapi-driver
+    ];
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -106,9 +96,8 @@
     appimage-run
     brave
     btop
-    discord
+    egl-wayland
     fastfetch
-    filezilla
     gamescope
     git
     gnome.nautilus
@@ -118,16 +107,15 @@
     htop
     kdePackages.kdeconnect-kde
     lunarvim
-    lutris
     mangohud
     mpv
-    piper
     ###
     #mesa # Gpu Driver
     ###
-    qbittorrent
+    nvidia-vaapi-driver
     p7zip
     pavucontrol
+    piper
     protontricks
     protonup-qt
     stress
@@ -170,23 +158,23 @@
     enableSSHSupport = true;
   };
 
-  # rtkit is optional but recommended For Audio
+  # rtkit is optional but recommended For Audio And Security
   security.rtkit.enable = true;
 
   # Various Services
   services = {
-    openssh.enable = true; #Service For SSH
-    flatpak.enable = true; #Service For Flatpak
-    udisks2.enable = true; #Service For Mounting Drives
-    ratbagd.enable = true; #Service For Configuring Logitech Devices
-    #blueman.enable = true; #Service For Gui Bluetooth Manager
+    openssh.enable = true; # Service For SSH
+    flatpak.enable = true; # Service For Flatpak
+    udisks2.enable = true; # Service For Mounting Drives
+    ratbagd.enable = true; # Service For Configuring Logitech Devices
+    #blueman.enable = true; # Gui Bluetooth Manager
     pipewire = {
-      enable = true;  # Enabling The Service
-      alsa.enable = true; # Let it Replace Alsa
-      alsa.support32Bit = true; # Let it Replace Alsa 32Bit Libs
-      pulse.enable = true; # Let it Replace Pulseaudio
-      jack.enable = true; # Let it Replace Jack Client
-      wireplumber.enable = true; # Replace pipewire.media.session with better one
+      enable = true;  # Enabling Pipewire Service
+      alsa.enable = true; # Modern Frontend For Alsa
+      alsa.support32Bit = true; # Modern Frontend For Alsa 32Bit Libs
+      pulse.enable = true; # Modern Frontend For Pulseaudio
+      jack.enable = true; # Modern Frontend For Jack
+      wireplumber.enable = true; # Replace pipewire.media.session With Wireplumber
     };
   };
 
@@ -201,12 +189,12 @@
   networking.firewall = { 
     enable = true;
     allowedTCPPortRanges = [ 
-      { from = 1714; to = 1764; } #KDE Connect
-      { from = 47984; to = 48010; } #Sunshine
+      { from = 1714; to = 1764; } # KDE Connect
+      { from = 47984; to = 48010; } # Sunshine
     ];  
     allowedUDPPortRanges = [ 
-      { from = 1714; to = 1764; }  #KDE Connect
-      { from = 47998; to = 48010; } #Sunshine
+      { from = 1714; to = 1764; }  # KDE Connect
+      { from = 47998; to = 48010; } # Sunshine
     ];  
   };
 

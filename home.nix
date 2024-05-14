@@ -7,7 +7,6 @@
    shellAliases = {
      ll = "ls -l";
      update = "sudo nixos-rebuild switch --impure --upgrade --flake /home/anas/Nixos-setup";
-     nvim = "lvim";
      neofetch = "fastfetch";
    };
    oh-my-zsh = {
@@ -50,13 +49,13 @@
  };
 
  # Cursors
- #home.pointerCursor = {
- #  gtk.enable = true;
+ home.pointerCursor = {
+   gtk.enable = true;
  #  x11.enable = true;
- #  package = pkgs.bibata-cursors;
- #  name = "Bibata-Modern-Classic";
- #  size = 16;
- #};
+   package = pkgs.bibata-cursors;
+   name = "Bibata-Modern-Classic";
+   size = 16;
+ };
 
  # Gtk Theme
  gtk = {
