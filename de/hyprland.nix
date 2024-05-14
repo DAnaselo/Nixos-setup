@@ -3,18 +3,18 @@
 {
   #Xserver Configs
   services = {
+    displayManager = {
+      autoLogin.enable = true;
+      autoLogin.user = "anas";
+      defaultSession = "hyprland";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+    };
     xserver = {
       enable = true;
       videoDrivers = [ "nvidia" ];
-      displayManager = {
-        autoLogin.enable = true;
-        autoLogin.user = "anas";
-        defaultSession = "hyprland";
-        sddm = {
-          enable = true;
-          wayland.enable = true;
-        };
-      };
     };
   };
 
@@ -46,6 +46,7 @@
     hyprpicker
     hyprpaper
     lf
+    nwg-look
     rofi-wayland
     slurp
     wlogout
