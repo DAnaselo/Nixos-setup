@@ -7,7 +7,8 @@
     xserver = {
       enable = true;
       videoDrivers = [ "nvidia" ];
-    # Enabling Dwm
+      desktopManager.xterm.enable = false;
+      excludePackages = [ pkgs.xterm ];
       windowManager.dwm.enable = true;
       displayManager = {
         lightdm.enable = true;

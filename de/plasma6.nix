@@ -10,7 +10,9 @@
     };
     xserver = {
       enable = true;
-     videoDrivers = [ "nvidia" ];
+      videoDrivers = [ "nvidia" ];
+      desktopManager.xterm.enable = false;
+      excludePackages = [ pkgs.xterm ];
     };
   };
  

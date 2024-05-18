@@ -1,7 +1,7 @@
 {pkgs, ...}:
 
 {
-  #Xserver Configs
+  # Display Server Configuration
   services = {
     displayManager = {
       autoLogin.enable = true;
@@ -15,6 +15,8 @@
     xserver = {
       enable = true;
       videoDrivers = [ "nvidia" ];
+      desktopManager.xterm.enable = false;
+      excludePackages = [ pkgs.xterm ];
     };
   };
 

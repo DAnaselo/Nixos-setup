@@ -125,6 +125,9 @@
     wget
   ];
 
+  # Doesn't Let Documentation Install
+  documentation.nixos.enable = false;
+
   # Various Nix Store Configs
   nixpkgs = {
     config = {
