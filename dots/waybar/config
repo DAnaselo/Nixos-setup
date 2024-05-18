@@ -39,7 +39,6 @@
     },
     "clock":{
         "format": "{:%I:%M%p - %m/%d}",
-        "tooltip": false,
         "on-click": "pkill -9 rofi"
     },
     "custom/power":{
@@ -68,9 +67,6 @@
             "headphone": "",
             "hands-free": "",
             "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": ["", "", ""]
         }
     },
