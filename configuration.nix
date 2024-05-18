@@ -15,7 +15,7 @@
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_latest;
-    #kernelParams = [ "quiet" ];
+    kernelParams = [ "quiet" "nvidia_drm.fbdev=1" ];
     #kernelParams = [ "quiet" "nouveau.config=NvGspRm=1" ];
   };
 
@@ -118,8 +118,7 @@
     piper
     protontricks
     protonup-qt
-    stress
-    s-tui
+    sunshine
     tmux
     unrar
     unzip
@@ -167,7 +166,7 @@
     flatpak.enable = true; # Service For Flatpak
     udisks2.enable = true; # Service For Mounting Drives
     ratbagd.enable = true; # Service For Configuring Logitech Devices
-    #blueman.enable = true; # Gui Bluetooth Manager
+    blueman.enable = true; # Gui Bluetooth Manager
     pipewire = {
       enable = true;  # Enabling Pipewire Service
       alsa.enable = true; # Modern Frontend For Alsa
