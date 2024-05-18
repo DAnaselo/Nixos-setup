@@ -1,4 +1,4 @@
-* [Notes](#Notes)
+* [Note](#Note)
 * [Installation](#Installation)
 
 ## Installation
@@ -25,7 +25,7 @@ Finally, Run this to build
 sudo nixos-rebuild switch --upgrade --impure --flake .
 ```
 5. Enjoy
-## Notes
+## Note
 Please For The Love of God Do This Everytime you Rebuild Your System To Have Good Hygiene ;)
 ```
 sudo nix-collect-garbage -d
