@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports =
     [
@@ -15,16 +15,16 @@
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ "quiet" "nvidia_drm.fbdev=1" ];
-    #kernelParams = [ "quiet" "nouveau.config=NvGspRm=1" ];
+    kernelParams = [ "quiet" "nvidia_drm.fbdev=1" ]; # nvidia_drm.fbdev=1 Is For A Bug In Kernel 6.9 That Doesn't Wayland Server's Run Without this param on
+    #kernelParams = [ "quiet" "nouveau.config=NvGspRm=1" ]; nouveauu.config=NvGspRm=1 Enables GSP Firmware On Nvidia Gpu's, Required For Mesa 24's Hardware Acc
   };
 
-  # Systemd Boot Shutdown Timeout
+  # Systemd Boot Shutdown Timeout 
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=15s
   '';
 
-  # Locale Configs
+  # Locale Settings
     time.timeZone = "Israel";
     i18n.defaultLocale = "en_US.UTF-8";
     console = {
