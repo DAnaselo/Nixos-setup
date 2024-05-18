@@ -1,3 +1,7 @@
+* [Notes](#Note)
+* [Installation](#Installation)
+
+## Installation
 1. Make sure to Generate The Default System Config Using
 ```
 sudo nixos-generate-config --root /mnt
@@ -21,7 +25,8 @@ Finally, Run this to build
 sudo nixos-rebuild switch --upgrade --impure --flake .
 ```
 5. Enjoy
-6. Please For The Love of God Do This Everytime you Rebuild Your System To Have Good Hygiene ;)
+## Notes
+Please For The Love of God Do This Everytime you Rebuild Your System To Have Good Hygiene ;)
 ```
 sudo nix-collect-garbage -d
 ```
