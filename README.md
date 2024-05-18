@@ -1,4 +1,4 @@
-* [Notes](#Note)
+* [Notes](#Notes)
 * [Installation](#Installation)
 
 ## Installation
