@@ -26,7 +26,11 @@ sudo nixos-rebuild switch --upgrade --impure --flake .
 ```
 5. Enjoy
 ## Note
-Please For The Love of God Do This Everytime you Rebuild Your System To Have Good Hygiene ;)
+If You Want To Update Your Packages, Execute This Command In Your "Nixos-setup" Folder
+```
+sudo nix flake update
+```
+.... And Please For The Love of God Do This Everytime you Rebuild/Update Your System To Have Good Hygiene ;)
 ```
 sudo nix-collect-garbage -d
 ```
