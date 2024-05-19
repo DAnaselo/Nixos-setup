@@ -15,7 +15,7 @@
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ "quiet" "nvidia_drm.fbdev=1" ]; # nvidia_drm.fbdev=1 Is For A Bug In Kernel 6.9 That Doesn't Wayland Server's Run Without this param on
+    kernelParams = [ "quiet" "nvidia_drm.fbdev=1" ]; # nvidia_drm.fbdev=1 Is For A Bug In Kernel 6.9 That Doesn't Let Wayland Server's Run Without this param on
     #kernelParams = [ "quiet" "nouveau.config=NvGspRm=1" ]; nouveauu.config=NvGspRm=1 Enables GSP Firmware On Nvidia Gpu's, Required For Mesa 24's Hardware Acc
   };
 
@@ -153,7 +153,7 @@
     openssh.enable = true; # Service For SSH
     flatpak.enable = true; # Service For Flatpak
     udisks2.enable = true; # Service For Mounting Drives
-    ratbagd.enable = true; # Service For Configuring Logitech Devices
+    ratbagd.enable = true; # Service For Configuring Logitech Devices, Needed For pkgs.piper
     blueman.enable = true; # Gui Bluetooth Manager
     pipewire = {
       enable = true;  # Enabling Pipewire Service
