@@ -1,11 +1,11 @@
 {pkgs, ... }:
 {
   # Makes The Adapter Accept Magic Packates 
-  networking.interfaces.enp3s0.wakeonlan.enable = true;
+  networking.interfaces.enp3s0.wakeOnLan.enable = true;
 
   # Wake on Lan Service
   systemd.services.wakeonlan = {
-    description = "WakeonLan Service";
+    description = "Wake on lan Service";
     after = [ "network.target" ];
     serviceConfig = {
       Type = "simple";
