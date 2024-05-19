@@ -4,6 +4,7 @@
     [
       ./hardware-configuration.nix
       ./de/hyprland.nix
+      ./misc/wol.nix
     ];
 
   # Bootloader Configs (Using systemd-boot)
@@ -41,31 +42,16 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
-    interfaces.enp3s0.wakeOnLan = {
-      enable = true;
-    };
-  };
-
-  # Wake on Lan Service
-  systemd.services.wakeonlan = {
-    description = "WakeonLan Service";
-    after = [ "network.target" ];
-    serviceConfig = {
-      Type = "simple";
-      RemainAfterExit = "true";
-      ExecStart = "${pkgs.ethtool}/sbin/ethtool -s enp3s0 wol g";
-    };
-    wantedBy = [ "default.target" ];
   };
 
   # Prop Nvidia Drivers
   hardware.nvidia = {
-    modesetting.enable = true; # nvidia-drm.modeset=1
-    powerManagement.enable = true; # NVreg_PreserveVideoMemoryAllocations=1
-    powerManagement.finegrained = false;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    modesetting.enable = true; # Makes The Nvidia Driver To Change The Mode Setting of The Gpu AKA : nvidia-drm.modeset=1
+    powerManagement.enable = true; # Enable experimental Power Management Through Systemd AKA : nvidia.NVreg_PreserveVideoMemoryAllocations=1
+    powerManagement.finegrained = false; # Enable Experimental Power Management of PRIME offload AKA : options nvidia "NVreg_DynamicPowerManagement=0x02
+    open = false; # open source NVIDIA kernel module
+    nvidiaSettings = true; # Install's The nvidia-settings Package 
+    package = config.boot.kernelPackages.nvidiaPackages.beta; # Decied Of Which Version Of The Driver To Install
   };
 
   # Hardware Acceleration
