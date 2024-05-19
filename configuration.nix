@@ -132,7 +132,7 @@
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open's Up The Firewall For Steam Remote Play
-    dedicatedServer.openFirewall = true; # If You Want To Host Something On Steam You Need This Firewall Open Use it 
+    dedicatedServer.openFirewall = false; # Open ports in the firewall for Source Dedicated Server 
     gamescopeSession.enable = true; # Install's The Gamescope Session For Optimised Gaming
   };
 
