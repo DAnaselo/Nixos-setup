@@ -59,9 +59,9 @@
     driSupport = true; # Vulkan 
     driSupport32Bit = true; # 32Bit Vulkan
     extraPackages = with pkgs; [
-      vaapiVdpau
-      libvdpau-va-gl
-      nvidia-vaapi-driver
+      vaapiVdpau # Video Acceleration API Wrapper For VDPAU  
+      libvdpau-va-gl # Wrapper For VAAPI For Library to use the Video Decode and Presentation 
+      nvidia-vaapi-driver # VAAPI Wrapper For Nvidia Prop Decoders 
     ];
   };
 
@@ -131,9 +131,9 @@
   # Steam
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    gamescopeSession.enable = true;
+    remotePlay.openFirewall = true; # Open's Up The Firewall For Steam Remote Play
+    dedicatedServer.openFirewall = true; # If You Want To Host Something On Steam You Need This Firewall Open Use it 
+    gamescopeSession.enable = true; # Install's The Gamescope Session For Optimised Gaming
   };
 
   # Gamemode
