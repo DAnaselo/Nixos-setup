@@ -1,5 +1,4 @@
 {pkgs, ...}:
-
 {
   # Display Server Configuration
   services = {
@@ -47,11 +46,8 @@
     grim
     hyprpicker
     hyprpaper
-    lf
-    nwg-look
     rofi-wayland
     slurp
     wlogout
-    xwaylandvideobridge
   ];
 }
