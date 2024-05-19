@@ -52,5 +52,6 @@
     rofi-wayland
     slurp
     wlogout
+    xwaylandvideobridge
   ];
 }
