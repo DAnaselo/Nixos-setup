@@ -4,7 +4,6 @@
     [
       ./hardware-configuration.nix
       ./de/hyprland.nix
-      ./misc/wol.nix
     ];
 
   # Bootloader Configs (Using systemd-boot)
