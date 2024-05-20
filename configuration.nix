@@ -79,9 +79,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     appimage-run
-    brave
     btop
-    egl-wayland
     fastfetch
     gamescope
     git
@@ -93,18 +91,14 @@
     kdePackages.kdeconnect-kde
     lunarvim
     mangohud
-    mpv
     ###
     #mesa # Gpu Driver
     ###
-    nvidia-vaapi-driver
     p7zip
     pavucontrol
-    piper
-    protontricks
-    protonup-qt
     sunshine
     tmux
+    udiskie
     unrar
     unzip
     wget
@@ -126,14 +120,6 @@
       experimental-features = [ "nix-command" "flakes" ]; # Enabling The "Flake" Commmand
       auto-optimise-store = true; # Optimise (Hardlink) Nix Store On Every Rebuild
     };
-  };
-
-  # Steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open's Up The Firewall For Steam Remote Play
-    dedicatedServer.openFirewall = false; # Open ports in the firewall for Source Dedicated Server 
-    gamescopeSession.enable = true; # Install's The Gamescope Session For Optimised Gaming
   };
 
   # Gamemode
