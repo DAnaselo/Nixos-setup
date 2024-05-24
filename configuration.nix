@@ -96,7 +96,6 @@
     ###
     p7zip
     pavucontrol
-    sunshine
     tmux
     udiskie
     unrar
@@ -148,6 +147,10 @@
       pulse.enable = true; # Modern Frontend For Pulseaudio
       jack.enable = true; # Modern Frontend For Jack
       wireplumber.enable = true; # Replace pipewire.media.session With Wireplumber
+    };
+    sunshine = {
+      enable = true;
+      capSysAdmin = true;
     };
   };
 
