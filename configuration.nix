@@ -150,14 +150,14 @@
     };
     sunshine = {
       enable = true;
-      capSysAdmin = true;
+      capSysAdmin = true; # For DRM/KMS Capture To Work on Wayland
     };
   };
 
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = true;
+    powerOnBoot = false; # Starts The Bluetooth Sevice on Boot
     settings.General.Enable = "Source,Sink,Media,Socket";
   };
 
