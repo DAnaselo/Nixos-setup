@@ -50,7 +50,7 @@
     powerManagement.finegrained = false; # Enable Experimental Power Management of PRIME offload AKA : options nvidia "NVreg_DynamicPowerManagement=0x02
     open = false; # open source NVIDIA kernel module
     nvidiaSettings = true; # Install's The nvidia-settings Package 
-    package = config.boot.kernelPackages.nvidiaPackages.beta; # Decied Of Which Version Of The Driver To Install
+    package = config.boot.kernelPackages.nvidiaPackages.beta; # Decied Of Which Version Of The Driver To Install (555.42.02)
   };
 
   # Hardware Acceleration

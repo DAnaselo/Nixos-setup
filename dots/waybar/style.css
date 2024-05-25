@@ -105,6 +105,6 @@ window#waybar {
 #pulseaudio {
     color: #11111B;
     border-left: 0px;
-    border-right: 0px;
+    margin-right: 5px;
     border-radius: 10px;
 }
