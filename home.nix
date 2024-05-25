@@ -89,7 +89,7 @@
  home.file.".config/rofi/config.rasi".source = ./dots/rofi/config.rasi;
 
   # Homemanager Version
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;

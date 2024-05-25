@@ -156,6 +156,7 @@
     };
     sunshine = {
       enable = true;
+      openFirewall = true;
       capSysAdmin = true; # For DRM/KMS Capture To Work on Wayland
     };
   };
@@ -170,12 +171,12 @@
   # Firewalling
   networking.firewall = { 
     enable = true;
-    allowedTCPPortRanges = [ 
-      { from = 47984; to = 48010; } # Sunshine
-    ];  
-    allowedUDPPortRanges = [ 
-      { from = 47998; to = 48010; } # Sunshine
-    ];  
+    #allowedTCPPortRanges = [ 
+    #  { from = 47984; to = 48010; } # Sunshine
+    #];  
+    #allowedUDPPortRanges = [ 
+    #  { from = 47998; to = 48010; } # Sunshine
+    #];  
   };
 
   system = {
