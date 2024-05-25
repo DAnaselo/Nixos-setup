@@ -81,14 +81,12 @@
     appimage-run
     btop
     fastfetch
-    gamescope
     git
     gnome.nautilus
     gnome.zenity
     goverlay
     gparted
     htop
-    kdePackages.kdeconnect-kde
     lunarvim
     mangohud
     ###
@@ -96,7 +94,6 @@
     ###
     p7zip
     pavucontrol
-    tmux
     udiskie
     unrar
     unzip
@@ -121,8 +118,17 @@
     };
   };
 
+  # Tmux
+  programs.tmux.enable = true;
+
   # Gamemode
   programs.gamemode.enable = true;
+
+  # Gamescope
+  programs.gamescope.enable = true;
+
+  # Kde Connect
+  programs.kdeconnect.enable = true;
  
   # Security Agent
   programs.gnupg.agent = {
@@ -165,11 +171,9 @@
   networking.firewall = { 
     enable = true;
     allowedTCPPortRanges = [ 
-      { from = 1714; to = 1764; } # KDE Connect
       { from = 47984; to = 48010; } # Sunshine
     ];  
     allowedUDPPortRanges = [ 
-      { from = 1714; to = 1764; }  # KDE Connect
       { from = 47998; to = 48010; } # Sunshine
     ];  
   };
