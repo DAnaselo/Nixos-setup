@@ -3,7 +3,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./de/gnome.nix
+      ./de/hyprland.nix
     ];
 
   # Bootloader Configs (Using systemd-boot)
