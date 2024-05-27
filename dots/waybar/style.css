@@ -1,6 +1,6 @@
 * {
     border: none;
-    border-radius: 5;
+    border-radius: 0;
     font-family: Cartograph CF Nerd Font, monospace;
     font-weight: bold;
     font-size: 14px;
@@ -46,7 +46,7 @@ window#waybar {
 #backlight {
     background: #6272A4;  
     padding: 0px 10px;
-    margin: 0px 0px;
+    margin: 3px 0px;
     margin-top: 3px;
     border: 1px solid #181825;
 }
