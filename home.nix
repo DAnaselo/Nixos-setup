@@ -22,6 +22,9 @@
      font_size = "12.5";
      enable_audio_bell = "no";
      background_opacity = "0.6";
+     linux_display_server = "wayland";
+     input_delay = "1";
+     sync_to_monitor = "yes";
      confirm_os_window_close = "0";
      hide_window_decorations = "yes";
    };

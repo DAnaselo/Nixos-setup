@@ -1,6 +1,6 @@
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 5;
     font-family: Cartograph CF Nerd Font, monospace;
     font-weight: bold;
     font-size: 14px;
@@ -8,8 +8,7 @@
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
+    background: rgba(191, 191, 191, 0);
 }
 
 #workspaces button {
@@ -25,19 +24,16 @@ window#waybar {
 #workspaces button.focused {
     color: #a6adc8;
     background: #eba0ac;
-    border-radius: 10px;
 }
 
 #workspaces button.urgent {
     color: #11111b;
     background: #a6e3a1;
-    border-radius: 10px;
 }
 
 #workspaces button:hover {
     background: #11111b;
     color: #cdd6f4;
-    border-radius: 10px;
 }
 
 #custom-power,
@@ -50,18 +46,16 @@ window#waybar {
 #backlight {
     background: #6272A4;  
     padding: 0px 10px;
-    margin: 3px 0px;
-    margin-top: 10px;
+    margin: 0px 0px;
+    margin-top: 3px;
     border: 1px solid #181825;
 }
 
 #tray {
-    border-radius: 10px;
     margin-right: 10px;
 }
 
 #workspaces {
-    border-radius: 10px;
     margin-left: 10px;
     padding-right: 0px;
     padding-left: 5px;
@@ -69,35 +63,27 @@ window#waybar {
 
 #custom-power {
     color: #11111b;
-    border-radius: 10px;
     margin-left: 3px;
     margin-right: 3px;
-    margin-top: 10px;
-    margin-bottom: 4px;
     padding-left: 5px;
     padding-right: 10px;
 }
 #custom-menu {
     color: #11111B;
-    border-radius: 10px;
     margin-left: 3px;
     margin-right: 3px;
-    margin-top: 10px;
-    margin-bottom: 4px;
     padding-left: 5px;
     padding-right: 10px;
 }
 
 #window {
     color: #11111B; 
-    border-radius: 10px;
     margin-left: 60px;
     margin-right: 60px;
 }
 
 #clock {
     color: #11111B;
-    border-radius: 10px;
     margin-left: 5px;
     border-right: 0px;
 }
@@ -106,5 +92,4 @@ window#waybar {
     color: #11111B;
     border-left: 0px;
     margin-right: 5px;
-    border-radius: 10px;
 }

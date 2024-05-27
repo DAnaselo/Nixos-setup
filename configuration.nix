@@ -128,7 +128,7 @@
   programs.gamescope.enable = true;
 
   # Kde Connect
-  programs.kdeconnect.enable = true;
+  # programs.kdeconnect.enable = true;
 
   programs.steam = {
     enable = true;
