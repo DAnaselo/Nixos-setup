@@ -52,8 +52,8 @@
  home.pointerCursor = {
    gtk.enable = true;
    #x11.enable = true;
-   package = pkgs.bibata-cursors;
-   name = "Bibata-Modern-Classic";
+   package = pkgs.phinger-cursors;
+   name = "phinger-cursors-light";
    size = 22;
  };
 

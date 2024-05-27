@@ -129,6 +129,12 @@
 
   # Kde Connect
   programs.kdeconnect.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
  
   # Security Agent
   programs.gnupg.agent = {
