@@ -87,7 +87,7 @@
 
  home.file.".config/hypr".source = ./dots/hypr;
  home.file.".config/waybar".source = ./dots/waybar;
- home.file.".config/dunst".source = ./dots/dunst;
+ #home.file.".config/dunst".source = ./dots/dunst;
  home.file.".config/rofi".source = ./dots/rofi;
 
   # Homemanager Version
