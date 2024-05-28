@@ -85,12 +85,10 @@
    };
  };
 
- home.file.".config/hypr/hyprland.conf".source = ./dots/hypr/hyprland.conf;
- home.file.".config/hypr/hyprpaper.conf".source = ./dots/hypr/hyprpaper.conf;
- home.file.".config/waybar/config".source = ./dots/waybar/config;
- home.file.".config/dunst/dunstrc".source = ./dots/dunst/dunstrc;
- home.file.".config/waybar/style.css".source = ./dots/waybar/style.css;
- home.file.".config/rofi/config.rasi".source = ./dots/rofi/config.rasi;
+ home.file.".config/hypr".source = ./dots/hypr;
+ home.file.".config/waybar".source = ./dots/waybar;
+ home.file.".config/dunst".source = ./dots/dunst;
+ home.file.".config/rofi".source = ./dots/rofi;
 
   # Homemanager Version
   home.stateVersion = "24.11";
