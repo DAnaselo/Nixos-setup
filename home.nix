@@ -90,6 +90,7 @@
  home.file.".config/waybar/config".source = ./dots/waybar/config;
  home.file.".config/waybar/style.css".source = ./dots/waybar/style.css;
  home.file.".config/rofi/config.rasi".source = ./dots/rofi/config.rasi;
+ home.file.".config/dunst/dunstrc".source = ./dots/dunst/dunstrc;
 
   # Homemanager Version
   home.stateVersion = "24.11";
