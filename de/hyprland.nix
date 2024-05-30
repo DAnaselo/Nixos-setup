@@ -37,6 +37,11 @@
     ];
   };
 
+  # Various Services
+  services = {
+    blueman.enable = true;
+  };
+
   # Packges For Hyprland DE
   environment.systemPackages = with pkgs; [
     cava
@@ -45,6 +50,7 @@
     grim
     hyprpicker
     hyprpaper
+    gnome.nautilus
     rofi-wayland
     slurp
     wlogout

@@ -82,8 +82,6 @@
     btop
     fastfetch
     git
-    gnome.nautilus
-    gnome.zenity
     goverlay
     gparted
     htop
@@ -145,7 +143,6 @@
     flatpak.enable = true; # Service For Flatpak
     udisks2.enable = true; # Service For Mounting Drives
     ratbagd.enable = true; # Service For Configuring Logitech Devices, Needed For pkgs.piper
-    blueman.enable = true; # Gui Bluetooth Manager
     pipewire = {
       enable = true;  # Enabling Pipewire Service
       alsa.enable = true; # Modern Frontend For Alsa
@@ -158,6 +155,7 @@
       enable = true;
       openFirewall = true;
       capSysAdmin = true; # For DRM/KMS Capture To Work on Wayland
+      autoStart = false; # Stops Sunshine From Booting Up Automaticly
     };
   };
 

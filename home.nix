@@ -54,7 +54,7 @@
  # Cursors
  home.pointerCursor = {
    gtk.enable = true;
-   #x11.enable = true;
+ #  x11.enable = true;
    package = pkgs.phinger-cursors;
    name = "phinger-cursors-light";
    size = 22;
