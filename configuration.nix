@@ -3,7 +3,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./de/hyprland.nix
+      ./de/plasma6.nix
     ];
 
   # Bootloader Configs (Using systemd-boot)
