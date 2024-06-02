@@ -97,7 +97,6 @@
     obs-studio
     p7zip
     pavucontrol
-    protontricks
     protonup-ng
     piper
     udiskie
@@ -131,7 +130,10 @@
   programs.gamemode.enable = true;
 
   # Gamescope
-  programs.gamescope.enable = true;
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
 
   # Kde Connect
   # programs.kdeconnect.enable = true;
@@ -145,6 +147,10 @@
   # Steam
   programs.steam = {
     enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    protontricks.enable = true;
+    gamescopeSession.enable = true;
   };
 
   # rtkit is optional but recommended For Audio And Security
