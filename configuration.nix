@@ -3,7 +3,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./de/plasma6.nix
+      ./de/hyprland.nix
     ];
 
   # Bootloader Configs (Using systemd-boot)
@@ -80,18 +80,26 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     btop
+    discord
     fastfetch
     git
+    google-chrome
     goverlay
     gparted
     htop
     lunarvim
+    lutris
     mangohud
     ###
     #mesa # Gpu Driver
     ###
+    mpv
+    obs-studio
     p7zip
     pavucontrol
+    protontricks
+    protonup-ng
+    piper
     udiskie
     unrar
     unzip
@@ -132,6 +140,11 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+  };
+
+  # Steam
+  programs.steam = {
+    enable = true;
   };
 
   # rtkit is optional but recommended For Audio And Security
