@@ -80,25 +80,21 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     btop
-    discord
     fastfetch
     git
+    gnome.zenity
     google-chrome
     goverlay
     gparted
     htop
     lunarvim
-    lutris
     mangohud
     ###
     #mesa # Gpu Driver
     ###
-    mpv
-    obs-studio
     p7zip
     pavucontrol
-    protonup-ng
-    piper
+    steamtinkerlaunch
     udiskie
     unrar
     unzip
@@ -147,10 +143,8 @@
   # Steam
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     protontricks.enable = true;
-    gamescopeSession.enable = true;
   };
 
   # rtkit is optional but recommended For Audio And Security
@@ -158,7 +152,7 @@
 
   # Various Services
   services = {
-    openssh.enable = true; # Service For SSH
+    openssh.enable = false; # Service For SSH
     flatpak.enable = true; # Service For Flatpak
     udisks2.enable = true; # Service For Mounting Drives
     ratbagd.enable = true; # Service For Configuring Logitech Devices, Needed For pkgs.piper
@@ -180,7 +174,7 @@
 
   # Bluetooth
   hardware.bluetooth = {
-    enable = true;
+    enable = false;
     powerOnBoot = false; # Starts The Bluetooth Sevice on Boot
     settings.General.Enable = "Source,Sink,Media,Socket";
   };
@@ -188,12 +182,6 @@
   # Firewalling
   networking.firewall = { 
     enable = true;
-    #allowedTCPPortRanges = [ 
-    #  { from = 47984; to = 48010; } # Sunshine
-    #];  
-    #allowedUDPPortRanges = [ 
-    #  { from = 47998; to = 48010; } # Sunshine
-    #];  
   };
 
   system = {
