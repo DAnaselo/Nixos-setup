@@ -5,7 +5,7 @@
       ./hardware-configuration.nix
       ./de/hyprland.nix
     ];
-boot.supportedFilesystems = [ "ntfs" ];
+
   # Bootloader Configs (Using systemd-boot)
   boot = {
     loader = {
