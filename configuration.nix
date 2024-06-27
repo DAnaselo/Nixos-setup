@@ -5,18 +5,17 @@
       ./hardware-configuration.nix
       ./de/hyprland.nix
     ];
-
+boot.supportedFilesystems = [ "ntfs" ];
   # Bootloader Configs (Using systemd-boot)
   boot = {
-    tmp.cleanOnBoot = true;
     loader = {
       timeout = 0;
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ "quiet" "nvidia_drm.fbdev=1" ]; # nvidia_drm.fbdev=1 Is For A Bug In Kernel 6.9 That Doesn't Let Wayland Server's Run Without this param on
-    #kernelParams = [ "quiet" "nouveau.config=NvGspRm=1" ]; nouveauu.config=NvGspRm=1 Enables GSP Firmware On Nvidia Gpu's, Required For Mesa 24's Hardware Acc
+    kernelParams = [ "quiet" "nvidia-drm.fbdev=1" "NVreg_EnableGpuFirmware=0" ];
+    #kernelParams = [ "quiet" "nouveau.config=NvGspRm=1" ]; #nouveauu.config=NvGspRm=1 Enables GSP Firmware On Nvidia Gpu's, Required For Mesa 24's Hardware Acc
   };
 
   # Systemd Boot Shutdown Timeout 
@@ -53,11 +52,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.beta; # Decied Of Which Version Of The Driver To Install (555.42.02)
   };
 
-  # Hardware Acceleration
-  hardware.opengl = {
+  # Hardware Acce
+  hardware.graphics = {
     enable = true;
-    driSupport = true; # Vulkan 
-    driSupport32Bit = true; # 32Bit Vulkan
+    enable32Bit = true;
     extraPackages = with pkgs; [
       vaapiVdpau # Video Acceleration API Wrapper For VDPAU  
       libvdpau-va-gl # Wrapper For VAAPI For Library to use the Video Decode and Presentation 
@@ -80,10 +78,10 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     btop
+    discord
     fastfetch
     git
     gnome.zenity
-    google-chrome
     goverlay
     gparted
     htop
@@ -94,15 +92,14 @@
     ###
     p7zip
     pavucontrol
+    piper
+    pipx
     steamtinkerlaunch
     udiskie
     unrar
     unzip
     wget
   ];
-
-  # Doesn't Let Documentation Install
-  documentation.nixos.enable = false;
 
   # Various Nix Store Configs
   nixpkgs = {
@@ -164,19 +161,13 @@
       jack.enable = true; # Modern Frontend For Jack
       wireplumber.enable = true; # Replace pipewire.media.session With Wireplumber
     };
+    preload.enable = true; # Makes Frequently used apps get cached for generally snappier system
     sunshine = {
       enable = true;
       openFirewall = true;
       capSysAdmin = true; # For DRM/KMS Capture To Work on Wayland
       autoStart = false; # Stops Sunshine From Booting Up Automaticly
     };
-  };
-
-  # Bluetooth
-  hardware.bluetooth = {
-    enable = false;
-    powerOnBoot = false; # Starts The Bluetooth Sevice on Boot
-    settings.General.Enable = "Source,Sink,Media,Socket";
   };
 
   # Firewalling
